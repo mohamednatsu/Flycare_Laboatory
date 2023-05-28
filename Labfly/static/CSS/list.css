@@ -1,0 +1,205 @@
+
+:root {
+    --main-colori--: #38b6ff;
+    --secondry-color--: #365b6d;
+    --third-color--: #E9E8E9;
+    --dark-color--:#444344;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    scroll-behavior: smooth;
+    height: 100vh;
+    /* background-color: #E9E8E9; */
+    background-color: var(--dark-color--);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.head {
+    text-align: center;
+    text-transform: capitalize;
+    margin: 25px 0;
+    padding: 5px 0;
+}
+
+.head h1 {
+    color: white;
+}
+
+#dark{
+    background-color: #fff;
+    box-shadow:  rgb(74 108 112 / 76%) 0px 7px 29px 0px;
+}
+
+
+h1 .line {
+    width: 80%;
+    height: 3px;
+    justify-content: center;
+    background-color: var(--main-colori--);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+
+
+.btnss {
+    width: 82%;
+    margin: -20px auto;
+    margin-bottom: -5px;
+    justify-content: space-around;
+    display: flex;
+}
+
+.btnss #li {
+    background-color:  #365b6d;
+}
+
+
+.btnss button {
+    color: white;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    width: 18%;
+    margin-bottom: 25px;
+    height: 46px;
+    margin-top: 15px;
+    font-size: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    text-transform: capitalize;
+    background-color: var(--main-colori--);
+    cursor: pointer;
+    /* margin: 1px 2px; */
+    font-weight: bold;
+}
+
+
+.listlab button:hover {
+    background-color: var(--main-colori--);
+    transition: 0.6s;
+    transform: scale(1.07);
+    line-height: 3px;
+    /* letter-spacing: 1.4px; */
+}
+
+.listlab {
+    width: 80%;
+    margin: auto;
+    background-color: var(--dark-color--);
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    margin: 11px 0;
+}
+
+table th {
+    color: #38b6ff;
+    text-transform: uppercase;
+    margin: 10px 5px;
+    padding: 10px;
+}
+
+table td {
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+    position: relative;
+    line-height: 1.6;
+}
+
+.act b {
+    color: red;
+}
+tr .inact {
+    position: absolute;
+    left: 5px;
+    top: -22px;
+    color: red;
+    font-size: 35px;
+}
+
+table button {
+    color: white;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    width: 80%;
+    height: 30px;
+    text-transform: capitalize;
+    background-color: var(--main-colori--);
+    cursor: pointer;
+    margin: 2px 15px;
+    font-weight: bold;
+}
+
+.list {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 0.8s;
+}
+
+.list table {
+    border-radius: 10px;
+    position: absolute;
+    z-index: 222;
+    width: 225px;
+    top: 238px;
+    /* height: 500px; */
+    background-color: var(--third-color--);
+
+    margin: 15px auto;
+    padding-top: 40px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 98px 900px;
+    width: 300px;
+    height: 300px;
+
+
+}
+
+.list table th {
+    color: #38b6ff;
+    text-transform: uppercase;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 30px;
+
+}
+
+.list table td {
+    padding: 10px 10px;
+    margin: 5px auto;
+    font-size: 20px;
+    color: #000;
+}
+
+.list h2 {
+    z-index: 234;
+    position: absolute;
+    top: 260px;
+    margin-bottom: 36px;
+}
+
+.list .close {
+    top: 258px;
+    left: 496px;
+    z-index: 1000;
+}
+
+.list input {
+    margin-left: 5px;
+}

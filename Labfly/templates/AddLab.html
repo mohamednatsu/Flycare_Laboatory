@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://www.google.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'CSS/lab.css' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/main.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Laboratory Website</title>
+</head>
+
+<body>
+    <div class="home">
+        <nav id="dark">
+            <img src="{% static 'img/logo.jpg' %}" alt="" />
+            <ul class="links">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'research' %}">resaerch</a></li>
+                <li><a href="{% url 'Services' %}">services</a></li>
+                <li><a href="{% url 'AboutUs' %}">About</a></li>
+                <li><a href="{% url 'features' %}">features</a></li>
+                <li><a href="{% url 'ContactUs' %}">contact</a></li>
+            </ul>
+            <div class="btn">
+                <li><a href="{% url 'lab' %}" id="button">Add Laboratory</a></li>
+            </div>
+            <div class="bars">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <!-- </div> -->
+        </nav>
+        <div id="ddd" class="dropdown">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#resaerch">resaerch</a></li>
+            <li><a href="#services">services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">features</a></li>
+            <li><a href="#contact">contact</a></li>
+            <div class="btn">
+                <li><a href="AddLab.html" id="button">Add Laboratory</a></li>
+            </div>
+        </div>
+    </div>
+    <!-- Body of Lab Adding -->
+    <div class="con-lab">
+        <div class="head">
+            <h1>
+                Add Laboratory:
+                <div class="line"></div>
+            </h1>
+        </div>
+        <div class="inputs">
+            <form method="POST">
+                {% csrf_token %}
+                <input style="width: 98%;" name="namelab" class="valid" placeholder="Name Is Lab: " type="text"
+                    id="title" />
+                <!-- <input name="idlab" placeholder="ID of Lab" type="number" id="idd" /> -->
+                <div class="data-Lab">
+                    <input class="valid" name="Build" placeholder="Building Number:" type="number" id="buildNum" />
+                    <input class="valid" name="Floor" placeholder="Floor Number:" type="number" id="floorNum" />
+                    <input class="valid" name="capacity" placeholder="Capacity:" type="number" id="capacity" />
+                    <button class="update" type="submit" id="Add">Add Laboratory</button>
+                    <input placeholder="Number Of Chairs:" name="Chair" type="number" id="chairNum" />
+                    <input placeholder="Number Of PC's:" type="number" name="pc" id="pcNum" />
+                    <input placeholder="Status Active or Inactive:" name="status" type="text" id="status" />
+                    <button id="add" type="submit" onclick="AddPc()">Add new PC</button>
+                    <button class="update" type="submit" id="Add">OK</button>
+            </form>
+            <div id="con-addlab">
+                <h2>Add Pc</h2>
+                <div onclick="none()" class="close">
+                    <p>X</p>
+                </div>
+                <input placeholder="ID OF  LABORATORY:" type="number" id="idlab" />
+                <input placeholder="STATUS ACTIVEOR UNDER MAINTENANCE: " type="text" id="statusPc" />
+                <button id="add2" type="submit">Add PC</button>
+            </div>
+
+            <div class="report" id="con-addlab2">
+                <h2>Report Of Lab</h2>
+                <div onclick="none()" class="close">
+                    <p>X</p>
+                </div>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <input placeholder="ID OF PC:" type="number" name="idpc" id="idPC" />
+                    <input class="idLab" placeholder="ID OF  LABORATORY:" type="number" name="idlab" id="idlab" />
+                    <textarea class="report" placeholder="WRITE REPORT: " type="text" id="RepoPc" name="report"
+                        cols="30"></textarea>
+                    <button id="add3" type="submit">Report</button>
+                </form>
+            </div>
+        </div>
+        <div class="data-pc"></div>
+        <div class="search">
+            <form method="POST">
+                {% csrf_token %}
+                <input placeholder="Search By Name" type="text" name="q" id="search" />
+                <button id="srch" type="submit">Search</button>
+                <!-- <button id="oo" type="submit">Search</button> -->
+            </form>
+        </div>
+        <div class="btns">
+            <button onclick="Report()" type="submit" id="report">
+                report of lab
+            </button>
+
+            <button type="submit" id="delete">delete ALL</button>
+            <button onclick="viewlist()" type="submit" id="listB">
+                list of PC,s
+            </button>
+            <div class="list" id="listLab">
+                <table>
+                    <hr style="
+                  z-index: 2000;
+                  top: 349px;
+                  border-radius: 20px;
+                  width: 20%;
+                  position: absolute;
+                " />
+
+                    <h2>List Of Pc</h2>
+                    <div onclick="none()" class="close">
+                        <p>X</p>
+                    </div>
+                    <tr>
+                        <th>id</th>
+                        <th>Status of pc</th>
+                    </tr>
+                    <hr />
+                    <tbody id="listTable"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- /////////////////////// -->
+    <div class="outputs">
+        <table>
+
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>building number</th>
+                <th>floor number</th>
+                <th>capacity</th>
+                <th>number of pc,s</th>
+                <th>number of chairs</th>
+                <th>Status</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tbody id="table">
+                <hr />
+                {{labs}}
+                {% for lab in labs %}
+                <tr>
+                    <td>{{lab.id}}</td>
+                    <td>{{lab.name}}</td>
+                    <td>{{lab.building_number}}</td>
+                    <td>{{lab.floor_number}}</td>
+                    <td>{{lab.capacity}}</td>
+                    <td>{{lab.Chairnum}}</td>
+                    <td>{{lab.numpcnum}}</td>
+                    <td><b id="light">.</b>{{lab.statuspc}}</td>
+                    <td><a href=""><button onclick="" id="btnEdit">Edit</button></a></td>
+                    <td> <a href="delete/{{lab.id}}"><button type="submit" onclick="" id="btnDelete">Delete</button></a> </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    </div>
+</body>
+
+<script src="{% static 'JS/btn.js' %}"></script>
+<script src="{% static 'JS/AddPc.js' %}"></script>
+<script src="{% static 'JS/lab.js' %}"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+</html>

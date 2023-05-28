@@ -1,0 +1,19 @@
+textarea:focus {
+    border: var(--main-colori--) solid 1.5px;
+    transition: 0.3s;
+    transform: scaleX(1.02);
+    outline: none;
+}
+
+
+textarea {
+    width: 40%;
+    margin: 10px auto;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+
+.data-Lab .btnss button {
+    margin-left: 64px;
+}

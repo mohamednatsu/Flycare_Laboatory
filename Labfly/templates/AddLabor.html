@@ -1,0 +1,47 @@
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'CSS/add.css' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/list.css' %}" />
+    
+    <link rel="stylesheet" href="{% static 'CSS/search.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>List Of Lab</title>
+</head>
+<body>
+    <!-- Navigation -->
+    {% include "navbar.html" %}
+    <div class="con-lab">
+
+        <div class="head">
+            <h1>
+            Add Laboratory:
+            <div class="line"></div>
+        </h1>
+    </div>
+    <div class="inputs">
+        <form method="POST">
+            {% csrf_token %}
+            <!-- <input name="idlab" placeholder="ID of Lab" type="number" id="idd" /> -->
+            <div class="data-Lab">
+                <input  name="namelab" class="valid" placeholder="Name Is Lab: " type="text"id="" />
+                <input class="valid" name="Build" placeholder="Building Number:" type="number" id="buildNum" />
+                <input class="valid" name="Floor" placeholder="Floor Number:" type="number" id="floorNum" />
+                <input class="valid" name="capacity" placeholder="Capacity:" type="number" id="capacity" />
+                <input placeholder="Number Of Chairs:" name="Chair" type="number" id="chairNum" />
+                <input placeholder="Number Of PC's:" type="number" name="pc" id="pcNum" />
+                <input placeholder="Status Active or Inactive:" name="status" type="text" id="status" />
+                <!-- <button id="add" type="submit" onclick="AddPc()">Add new PC</button> -->
+                <button class="update" type="submit" id="Add">Add Laboratory</button>
+                <button class="update" type="submit" id="Add">List Of Labs</button>
+        </form>
+    </div>
+</body>
+</html>
+

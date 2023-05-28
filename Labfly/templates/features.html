@@ -1,0 +1,60 @@
+{% extends "home.html" %}
+{% block nav %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <link rel="stylesheet" href="CSS/main.css" /> -->
+        <!-- <link rel="stylesheet" href="lab2.css" /> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/main.css'%}">
+    <title>Features</title>
+</head>
+
+<body>
+    <div class="features" id="features">
+        <h1 class="main-header">features
+            <div class="line"></div>
+        </h1>
+        <p id="P-ofMainheader" style="text-align: center;">Professional management and years of experience in the field
+            <br> of
+            medical laboratories with international <br> licenses to ensure your
+            registration with </p>
+        <div class="featSec">
+            <div class="featuresSec">
+                <img src="https://cdn.discordapp.com/attachments/1055472952239472683/1082348024551972885/IMG-20230303-WA0046.jpg"
+                    alt="idea">
+
+                <p class="iconTitle">Tell Us Your Idea</p>
+                <p class="iconContent">Tell Us New Ideas To Improve and get best Solution in our Services</p>
+            </div>
+
+            <div class="featuresSec">
+                <img src="https://cdn.discordapp.com/attachments/1055472952239472683/1082348023968972870/IMG-20230303-WA0047.jpg"
+                    alt="worldwide">
+
+                <p class="iconTitle">They Are Known Worldwide</p>
+                <p class="iconContent">Our services are spread across most countries of the world in order to spread our
+                    expertise</p>
+            </div>
+
+            <div class="featuresSec">
+                <img src="https://cdn.discordapp.com/attachments/1055472952239472683/1082348024258363503/IMG-20230303-WA0048.jpg"
+                    alt="confident">
+
+                <p class="iconTitle">They Are Confident</p>
+                <p class="iconContent">Trust and credibility are what distinguish us from all companies</p>
+            </div>
+        </div>
+    </div>
+    {% include "footer.html" %}
+</body>
+
+</html>
+{% endblock nav %}

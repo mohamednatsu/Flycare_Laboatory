@@ -1,0 +1,42 @@
+{% extends "home.html" %}
+{% block nav %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="CSS/main.css" /> -->
+    <!-- <link rel="stylesheet" href="lab2.css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/main.css'%}">
+    <title>FlyCare Laboratory</title>
+</head>
+
+<body>
+    <div class="about" id="about">
+        <h1 class="main-header" style="text-align: center;">About Us
+            <div class="line"></div>
+        </h1>
+        <p id="P-ofMainheader" style="text-align: center;">Professional management and years of experience in the field
+            <br> of
+            medical laboratories with international <br> licenses to ensure your
+            registration with </p>
+
+        <div class="photos">
+            <div id="desktop" class="photo">
+                <img src="{% static 'img/desktop.jpg' %}" alt="" srcset="" style="text-align: center;" width="50%">
+            </div>
+            <img id="phone" src="{% static 'img/phone.jpg' %}" alt="" srcset="" style="align-items: left;" width="50%">
+            <img id="tablet" src="{% static 'img/tablet.jpg' %}" alt="" srcset="" style="align-items: right;"
+                width="50%">
+        </div>
+    </div>
+    {% include "footer.html" %}
+</body>
+
+</html>
+{% endblock nav %}

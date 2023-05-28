@@ -1,0 +1,72 @@
+{% extends "home.html" %}
+{% block nav %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="CSS/main.css" /> -->
+    <!-- <link rel="stylesheet" href="lab2.css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/services_stylesh-1.css'%}">
+    <link rel="stylesheet" href="{% static 'CSS/main.css' %}" />
+    <title>Services</title>
+</head>
+
+<body>
+    
+    <div class="containerServices">
+        <h1 class="main-header">OUR SERVICES
+            <div class="line"></div>
+        </h1>
+        <p id="P-ofMainheader" style="text-align: center;">Professional management and years of experience in the field
+            <br> of
+            medical laboratories with international <br> licenses to ensure your
+            registration with </p>
+        <div style="grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));" class="services" id="services">
+            <div class="service">
+                <img src="{% static 'img/calendar.jpeg' %}" alt="calendar photo">
+                <h2>Book The Best Labs</h2>
+                <p>You can book an appointment that suits you at your convenience</p>
+            </div>
+
+            <div class="service">
+                <img src="{% static 'img/microscope.jpeg' %}" alt="microscope in a lab">
+                <h2>Add Your Own Lab</h2>
+                <p>We help you make your lab desirable to people and develop it</p>
+            </div>
+
+            <div class="service">
+                <img src="{% static 'img/headphones.jpeg' %}" alt="headphones">
+                <h2>Continuous Customer Service</h2>
+                <p>We respond to all inquiries very quickly</p>
+            </div>
+            
+            <div class="service">
+                <img src="{% static 'img/tablet_and_phone.jpeg' %}" alt="a phone and a tablet">
+                <h2>Responsive on All Devices</h2>
+                <p>You can find us on all devices and on all social networking sites</p>
+            </div>
+            
+            <div class="service">
+                <img src="{% static 'img/heart_stethoscope.jpeg' %}" alt="a heart and a stethoscope">
+                <h2>Accurate Health Follow-up</h2>
+                <p>Don't worry when you check us out because we trust our analysis</p>
+            </div>
+            <div class="service">
+                <img src="{% static 'img/truck.jpeg' %}" alt="truck">
+                <h2>Health Report Delivery</h2>
+                <p>If you are far away and cannot receive your analysis and results, we are here</p>
+            </div>
+        </div>
+    </div>
+
+    {% include "footer.html" %}
+</body>
+</html>
+{% endblock nav %}

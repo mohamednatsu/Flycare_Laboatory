@@ -1,0 +1,49 @@
+{% extends "home.html" %} {% block nav %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="CSS/main.css" /> -->
+    <!-- <link rel="stylesheet" href="lab2.css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css'%}" />
+    <link rel="stylesheet" href="{% static 'CSS/services_stylesh-1.css'%}" />
+    <link rel="stylesheet" href="{% static 'CSS/ContactUs.css' %}" />
+
+    <title>Home</title>
+</head>
+
+<body>
+    <div id="up" class="topHeader">^</div>
+    <!-- header section Start -->
+    <div class="page"></div>
+    <div class="circle">
+        <div class="text">
+            <h1>
+                TO MAKE YOUR MEDICALANALYZES<br />
+                SAFE WITHUS
+            </h1>
+            <p>
+                One of the most modern devices that<br />
+                have high accuracy in extracting results.
+            </p>
+            <div class="bt" id="btnText">
+                <li><a href="AddLab.html" id="button">Add Laboratory</a></li>
+            </div>
+        </div>
+        <div class="imgPrev">
+            <img src="{% static 'img/manlab.jpg' %}" alt="" />
+        </div>
+    </div>
+    {% include "footer.html" %}
+</body>
+
+</html>
+{% endblock nav %}

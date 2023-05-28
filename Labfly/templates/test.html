@@ -1,0 +1,35 @@
+
+<body>
+    <h2>Ajax</h2>
+
+    <input type="text">
+    <!-- <input type="text"> -->
+    <button type="submit" onclick="sendData()">Send</button>
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script>
+    function sendData() {
+        var data = {
+            name: document.querySelector('input').value
+
+        };
+
+        const dictuser = {name}
+        const s = JSON.stringify(data)
+
+        console.log(s)
+        var csrftoken = getCookie('csrftoken'); // get CSRF token from cookie
+
+        $.ajax({
+            url: '/test',
+            type: 'POST',
+            data: JSON.stringify(data),
+            headers: {
+                'X-CSRFToken': csrftoken // set CSRF token in request header
+            },
+        });
+        
+    }
+</script>
+
+</html>

@@ -1,0 +1,77 @@
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'CSS/add.css' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/list.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>List Of Lab</title>
+</head>
+
+<body>
+    {% include "navbar.html" %}
+    <!-- Body Of Lis -->
+    <div class="listlab">
+        <div class="head">
+            <h1>
+                List of PC
+                <div class="line"></div>
+            </h1>
+        </div>
+        <div class="outputs">
+            <table>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>number of pc,s</th>
+                    <th>Status</th>
+                </tr>
+                <tbody id="table">
+                    <hr />
+                    {% for lab in labs %}
+                    <tr>
+                        <td>{{lab.id}}</td>
+                        <td>{{lab.name}}</td>
+                        <td>{{lab.numpcnum}}</td>
+                        <td id="state">
+                            {{lab.statuspc}}
+                            <b id="light" class="inact">.</b>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <style>
+        h1 .line {
+            width: 10%;
+        }
+
+        table td {
+            padding: 10px;
+        }
+    </style>
+</body>
+<script src="JS/btn.js"></script>
+<script src="{% static 'JS/AddPc.js' %}"></script>
+<script>
+    var state = document.getElementById("state").firstChild;
+    var light = document.getElementById("light");
+    for(var i = 0; i < 20 ; i++) {
+        console.log(state);
+        console.log(light);
+        if (i === "None") {
+            light.classList().remove();
+        }
+    }
+</script>
+<script src="JS/lab.js"></script>
+
+</html>

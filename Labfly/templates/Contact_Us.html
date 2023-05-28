@@ -1,0 +1,59 @@
+{% extends "home.html" %}
+{% block nav %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/main.css'%}">
+    <link rel="stylesheet" href="{% static 'CSS/services_stylesh-1.css'%}">
+    <link rel="stylesheet" href="{% static 'CSS/ContactUs.css' %}">
+
+    <title>Contact Us</title>
+</head>
+
+<body>
+    <div class="contact" id="contact">
+        <h1 class="main-header" style="text-align: center; ">Contact Us
+            <div class="line"></div>
+        </h1>
+        <p id="P-ofMainheader" style="text-align: center;">Contact us and write to us if you have any questions or
+            services <br>
+            you want us to add </p>
+
+        <div class="inputsData">
+            <div class="name">
+                <input type="text" placeholder="name:" width="90%">
+
+            </div>
+            <div class="email">
+                <input type="text" placeholder="email:" width="90%">
+            </div>
+
+            <textarea name="" id="" cols="50" rows="20" placeholder="Write Message"></textarea>
+            <button class="btnSend" type="submit">Send Message</button>
+        </div>
+
+        <div class="call">
+            <h3>To call Us:</h3>
+            <p>+20 1140228412 <br>
+                +20 1196441441</p>
+        </div>
+
+        <div class="place">
+            <h3>Where WeAre:</h3>
+            <p>Egypt/ Giza <br>
+                Ahmed Zewail Street <br>
+                number 7</p>
+        </div>
+    </div>
+    {% include "footer.html" %}
+</body>
+
+</html>
+{% endblock nav %}

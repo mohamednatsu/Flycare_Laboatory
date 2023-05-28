@@ -1,0 +1,64 @@
+{% extends "home.html" %}
+{% block nav %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="CSS/main.css" /> -->
+    <!-- <link rel="stylesheet" href="lab2.css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/main.css'%}">
+    <link rel="stylesheet" href="{% static 'CSS/services_stylesh-1.css'%}">
+    <link rel="stylesheet" href="{% static 'CSS/ContactUs.css' %}">
+
+    <title>Research</title>
+</head>
+
+<body>
+    <div class="Research" id="resaerch">
+        <h1 class="main-header">resaerch
+            <div class="line"></div>
+        </h1>
+        <p id="P-ofMainheader" style="text-align: center;">Professional management and years of experience in the field
+            <br> of
+            medical laboratories with international <br> licenses to ensure your
+            registration with </p>
+        <div class="item">
+            <img id="res-img1" src="{% static 'img/micro.jpg' %}" alt="" width="100px">
+            <h2>How do you choose the right
+                laboratory for you based on
+                your examination with pro machines?</h2>
+            <div class="read-more">
+                <a href="#">Read More</a>
+            </div>
+        </div>
+        <div class="item">
+            <img id="res-img2" src="{% static 'img/placeLab.jpg' %}" alt="" width="100px">
+            <h2>here are steps that you must take into
+                account when choosing the appropriate
+                location for yourlaboratory</h2>
+            <div class="read-more">
+                <a href="#">Read More</a>
+            </div>
+        </div>
+        <div class="item">
+            <img id="res-img3" src="{% static 'img/ToolLab.jpg' %}" alt="" width="100px">
+            <h2>Learn about the dangers of some
+                medical tests and know how to handle
+                them with caution.</h2>
+            <div class="read-more">
+                <a href="#">Read More</a>
+            </div>
+        </div>
+    </div>
+    {% include "footer.html" %}
+</body>
+
+</html>
+{% endblock nav %}
